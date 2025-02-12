@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil - 4 Images, 1 Mot</title>
+    <link rel="stylesheet" href="./accueil.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="animatedText"></h1>
+        <p class="description">
+            Vous devez deviner un mot en vous basant sur 4 images. Choisissez un niveau de difficulté et commencez à jouer ! 
+            Le temps est compté, alors soyez rapide !
+        </p>
+        <div class="level-selection">
+            <label for="level">Choisir un niveau :</label>
+            <select id="level">
+                <option value="easy">Facile 🥳</option>
+                <option value="medium">Moyen 😐</option>
+                <option value="hard">Difficile 😓</option>
+            </select>
+        </div>
+        <button class="start-btn" id="startBtn">Commencer le jeu</button>
+
+        <script src="./accueil.js"></script>
+        <script src="./script.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #f9d423, #ff9a8b, #c6ff00);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007BFF;
+    display: inline-block;
+}
+
+h1{
+    animation: colorChange 2s infinite; 
+    display: inline-block; 
+}
+
+@keyframes colorChange {
+    0% {
+        color: #007BFF;
+    }
+    50% {
+        color: #FF6347; 
+    }
+    100% {
+        color: #32CD32; 
+    }
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: justify;
+}
+.start-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+.start-btn:hover {
+    background-color: #0056b3;
+}
+.level-selection {
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    font-size: 1em;
+}
+
+
+/* ===============================  loading ==================================*/
+
+.element {
+    width: 300px;
+    height: 150px;
+    margin: 50px auto;
+    border: 5px solid transparent; 
+    border-radius: 50%;
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.element:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%; 
+    border: 5px solid transparent;
+    background: conic-gradient(from 90deg, #ff6b6b, #f9d423, #ff9a8b, #c6ff00, #32cd32, #ff6347);
+    animation: rotateColors 3s linear infinite; }
+
+@keyframes rotateColors {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}

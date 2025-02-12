@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
+}
+#images img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    animation: bounce 1s infinite alternate;
+}
+input {
+    margin: 20px 0;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+}
+button {
+    padding: 10px 15px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0056b3;
+}
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+#timer {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+.emoji {
+    font-size: 2em;
+}
+
+
+/* =================================================================*/
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    font-size: 1.5rem;
+    animation: snowfall 10s linear infinite;
+  }
+
+  .light {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    animation: blinkLights 1.5s infinite ease-in-out;
+  }
+
+
+  .firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fireworks 1s ease-out forwards;
+  }
+
+  @keyframes snowfall {
+    to {
+      transform: translateY(100vh);
+    }
+  }
+
+  @keyframes blinkLights {
+    0% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes fireworks {
+    0% {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(10) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+
+  

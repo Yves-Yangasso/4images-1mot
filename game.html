@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 Images, 1 Mot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./accueil.css" />
+  </head>
+  <body >
+
+    <div id="snow" aria-hidden="true"></div>
+    
+    <div class="gamer" >
+      <div class="container">
+        <div class="" id="gamer">
+          <h1>4 Images, 1 Mot</h1>
+          <div id="images"></div>
+          <div id="timer">Temps restant: <span id="timeLeft"></span>s</div>
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Entrez votre réponse"
+          />
+          <button id="submitBtn">Valider</button>
+          <button id="resetBtn">Réinitialiser</button>
+          <p id="message"></p>
+        </div>
+
+        <div id="felicitation"></div>
+
+        <div id="incorrectQuestions"></div>
+      </div>
+    </div>
+
+    <script src="./database.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
