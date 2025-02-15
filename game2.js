@@ -14,21 +14,20 @@ if (gameLevel === "easy") {
   timeLimit = 5;
 }
 
-
 function startTimer() {
-    clearInterval(timerInterval);
+  clearInterval(timerInterval);
   
-    timeLeft = timeLimit;
+  timeLeft = timeLimit;
+  document.getElementById("timeLeft").textContent = timeLeft;
+  timerInterval = setInterval(function () {
+    timeLeft--;
     document.getElementById("timeLeft").textContent = timeLeft;
-    timerInterval = setInterval(function () {
-      timeLeft--;
-      document.getElementById("timeLeft").textContent = timeLeft;
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        checkAnswer();
-      }
-    }, 1000);
-  }
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      checkAnswer();
+    }
+  }, 1000);
+}
 
 function loadImages() {
   const imagesDiv = document.getElementById("images");
@@ -43,22 +42,25 @@ function loadImages() {
   const correctWord = currentWord.answer;
   const allLetters = getShuffledLetters(correctWord);
 
+
   currentWord.images.forEach((img) => {
     const imageElement = document.createElement("img");
     imageElement.src = img;
     imagesDiv.appendChild(imageElement);
   });
 
+
   allLetters.forEach((letter) => {
     const button = document.createElement("button");
     button.textContent = letter;
     button.onclick = function () {
-      selectLetter(letter);
+      selectLetter(letter, button);  
     };
     lettersDiv.appendChild(button);
   });
 
- // startTimer();
+
+  startTimer();
 }
 
 function getShuffledLetters(word) {
@@ -66,6 +68,7 @@ function getShuffledLetters(word) {
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   const randomLetters = [];
   
+
   while (randomLetters.length < word.length + 5) {
     randomLetters.push(letters[Math.floor(Math.random() * letters.length)]);
   }
@@ -74,15 +77,15 @@ function getShuffledLetters(word) {
   return randomLetters.sort(() => Math.random() - 0.5);
 }
 
-function selectLetter(letter) {
+function selectLetter(letter, button) {
   const selectedLettersDiv = document.getElementById("selectedLetters");
   const selectedLetterBtn = document.createElement("span");
   selectedLetterBtn.textContent = letter;
   selectedLettersDiv.appendChild(selectedLetterBtn);
-  
 
-  const button = [...document.getElementById("letters").children].find(b => b.textContent === letter);
+ 
   button.disabled = true;
+  button.style.visibility = 'hidden'; 
 }
 
 document.getElementById("submitBtn").addEventListener("click", checkAnswer);
@@ -113,7 +116,10 @@ function resetLetters() {
   const selectedLettersDiv = document.getElementById("selectedLetters");
   [...selectedLettersDiv.children].forEach(child => child.remove());
   const lettersDiv = document.getElementById("letters");
-  [...lettersDiv.children].forEach(button => button.disabled = false);
+  [...lettersDiv.children].forEach(button => {
+    button.disabled = false;
+    button.style.visibility = 'visible'; 
+  });
 }
 
 document.getElementById("resetBtn").addEventListener("click", resetGame);
@@ -129,4 +135,4 @@ function resetGame() {
   document.getElementById("gamer").removeAttribute("hidden");
 }
 
-loadImages();
+loadImages(); 
