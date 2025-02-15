@@ -3,6 +3,15 @@ let level_tmp = "";
 document.getElementById('startBtn').addEventListener('click', function() {
     level_tmp = document.getElementById('level').value;
     localStorage.setItem('gameLevel', level_tmp); 
+    localStorage.setItem('action', 'game1'); 
+    window.location.href = './loading.html'; 
+});
+
+
+document.getElementById('startBtn2').addEventListener('click', function() {
+    level_tmp = document.getElementById('level').value;
+    localStorage.setItem('gameLevel', level_tmp); 
+    localStorage.setItem('action', 'game2'); 
     window.location.href = './loading.html'; 
 });
 
